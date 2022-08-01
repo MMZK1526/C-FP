@@ -12,11 +12,11 @@ mmzklist_example.o:	../mmzklist.h
 
 run:
 	make all
-	./$(BUILD)
+	./$(BUILD) 5
 
 test:
 	make all
-	leaks --atExit -- ./$(BUILD)
+	leaks --atExit -- ./$(BUILD) 5
 
 clean:
 	rm -f -rf $(wildcard *.o) $(wildcard *.a) $(BUILD) *.dSYM

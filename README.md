@@ -79,4 +79,13 @@ For example, with `l1 = [3, 4, 5]` and `l2 = 2 : l2` (here we used the Haskell n
 Whenever the protocols above are satisfied, memory safety is ensured. I implemented this using some internal metadata as well as user-provided functions, see the following sections for details.
 
 ### Example
-TODO: Explain the power set example.
+In this example, we create a function that calculates the power set for {1, 2, ..., n} for any non-negative integer n. In other words, we will make the equivalence of the following Haskell function in C:
+
+```hs
+power :: Int -> [[Int]]
+power 0 = []
+power n = power (n - 1) ++ map (n :) (power (n - 1))
+```
+
+See the [annotated source code](examples/mmzklist_example.c).
+
